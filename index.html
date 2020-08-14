@@ -2,70 +2,75 @@
 <html>
 
 <head>
-    <meta charset='utf-8'>
-    <meta name="viewport" content="width=device-width">
-    <title>Weekend</title>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
-    <style>
+  <meta charset='utf-8'>
+  <meta name="viewport" content="width=device-width">
+  <title>Weekend</title>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
+  <style>
     body {
-        background-color: #000;
-        color: #fff
+      background-color: #000;
+      color: #fff
     }
+
     .container {
-        width: 400px;
-        text-align: center;
+      width: 400px;
+      text-align: center;
     }
+
     h1 {
-        font-family: georgia, serif;
-        font-size: 5em;
+      font-family: georgia, serif;
+      font-size: 5em;
     }
-    .progress{
-      margin:0 44px;
+
+    .progress {
+      margin: 0 44px;
     }
-    section{
+
+    section {
       height: 90vh;
     }
-    </style>
+  </style>
 </head>
 
 <body>
-    <div class="container">
+  <div class="container">
     <section>
       <br>
-        <h1>Weekend</h1><br>
-        <h5>Loading... Please wait</h5>
-        <div class="progress">
-            <div class="progress-bar progress-bar-striped active" id="progressbar" style="width: 1%">
-              <span>--</span>
-            </div>
+      <h1>Weekend</h1><br>
+      <h5>Loading... Please wait</h5>
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped active" id="progressbar" style="width: 1%">
+          <span>--</span>
         </div>
+      </div>
     </section>
     <footer>
       <a href="//github.com/getsetbro/weekend">fork on github</a>
     </footer>
-    </div>
+  </div>
 
-    <script src="//code.jquery.com/jquery-latest.min.js"></script>
-    <script>
-                                            //get the date right now
+  <script src="//code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+    //get the date right now
     var toDate = new Date();
-                                            //from the date right now get the day of the week it is
-    var toDay = toDate.getDay();                //friday is 5
-    var pBar = $('#progressbar');               //grab the progress bar element that is on the page
-                                                //so that we can update it with width and text later
-    var pBarText = pBar.find('span');                       //grab the text element
-        if(toDay > 0 && toDay < 6){                         //if the getDay gave us a 1 - 5 then...
-          var progressPercent = toDay / 5.5;                  //calculate the percent that is of the week
-          progressPercent = Math.floor(progressPercent * 100) + '%';//turn it into a string we can use
-          pBar.css({width: progressPercent});         //change the width of the progress bar to our percent
-          pBarText.text(progressPercent);             //change the text in the bar to our percent
-        }else{                                        //if the day was not a weekday
-          pBar.css({width: '100%'});                  //change the progress to width 100%
-          pBarText.text('100%');                      //and text 100%
-          $('h5').text('Weekend HEY HEY HEY Emoji for EVERYBODY‼⁉✌☝☎✉✒✏✂☀☁❄〽⚾Ⓜ✈🅿♨🅰🅱🅾♻⚠🈷🈂㊙®©™㊗ℹ✔✴✳✖↕⬆↗➡↘⬇↙⬅↖↔⤴⤵◀▶❇▫▪〰♠♥♣♦↩↪');
-                                                      //something special
-        }
-    </script>
+    //from the date right now get the day of the week it is
+    var toDay = toDate.getDay();  //friday is 5
+    var pBar = $('#progressbar'); //grab the progress bar element that is on the page
+    //so that we can update it with width and text later
+    var pBarText = pBar.find('span'); //grab the text element
+    if (toDay === 0) { toDay = 1; }
+    if (toDay > 0 && toDay < 6) { //if the getDay gave us a 1 - 5 then...
+      var progressPercent = toDay / 5.5;  //calculate the percent that is of the week
+      progressPercent = Math.floor(progressPercent * 100) + '%';//turn it into a string we can use
+      pBar.css({ width: progressPercent }); //change the width of the progress bar to our percent
+      pBarText.text(progressPercent); //change the text in the bar to our percent
+    } else {                          //if the day was not a weekday
+      pBar.css({ width: '100%' });  //change the progress to width 100%
+      pBarText.text('100%');  //and text 100%
+      $('h5').text('Weekend HEY HEY HEY Emoji for EVERYBODY‼⁉✌☝☎✉✒✏✂☀☁❄〽⚾Ⓜ✈🅿♨🅰🅱🅾♻⚠🈷🈂㊙®©™㊗ℹ✔✴✳✖↕⬆↗➡↘⬇↙⬅↖↔⤴⤵◀▶❇▫▪〰♠♥♣♦↩↪');
+      //something special
+    }
+  </script>
 </body>
 
 </html>
