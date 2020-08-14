@@ -55,7 +55,7 @@
                                                 //so that we can update it with width and text later
     var pBarText = pBar.find('span');                       //grab the text element
         if(toDay > 0 && toDay < 6){                         //if the getDay gave us a 1 - 5 then...
-          var progressPercent = toDay / 6;                  //calculate the percent that is of the week
+          var progressPercent = toDay / 5.5;                  //calculate the percent that is of the week
           progressPercent = Math.floor(progressPercent * 100) + '%';//turn it into a string we can use
           pBar.css({width: progressPercent});         //change the width of the progress bar to our percent
           pBarText.text(progressPercent);             //change the text in the bar to our percent
